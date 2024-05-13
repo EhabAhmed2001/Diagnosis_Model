@@ -129,3 +129,5 @@ def predict_disease():
 def hello_index():
     return "Welcome To Diagnosis Model"
 
+if __name__ == "__main__":
+    app.run(debug=True)
