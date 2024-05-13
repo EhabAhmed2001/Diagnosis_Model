@@ -125,7 +125,9 @@ def predict_disease():
     except Exception as e:
         return jsonify({'error': str(e)}), 400
 
-
+@app.route('/')
+def hello_index():
+    return "Welcome To Diagnosis Model"
 
 if __name__ == "__main__":
     app.run(debug=True)
