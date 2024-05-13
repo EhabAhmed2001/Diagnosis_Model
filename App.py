@@ -100,7 +100,7 @@ def get_prediction_value(patient_symptoms):
 # creating routes========================================
 # Define a route for the home page
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET'])
 def predict_disease():
 
 
@@ -129,5 +129,3 @@ def predict_disease():
 def hello_index():
     return "Welcome To Diagnosis Model"
 
-if __name__ == "__main__":
-    app.run(debug=True)
