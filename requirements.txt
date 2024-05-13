@@ -1,4 +1,3 @@
-gunicorn
 numpy
 flask
 pickle
