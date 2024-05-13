@@ -1,6 +1,6 @@
-gunicorn
+Gunicorn
+Flask
 numpy
-flask
 pickle
 pandas
 scikit-learn
