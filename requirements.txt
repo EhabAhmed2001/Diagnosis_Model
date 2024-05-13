@@ -1,6 +1,6 @@
-Gunicorn
-Flask
+scikit-learn==1.4.2
+flask
 numpy
-pickle
+uvicorn
 pandas
-scikit-learn
+joblib

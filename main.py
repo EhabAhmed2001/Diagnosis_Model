@@ -1,5 +1,5 @@
 import pandas as pd
-import pickle
+import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
@@ -31,4 +31,5 @@ accuracy = accuracy_score(y_test, predictions)
 
 print(f"Model Accuracy: {accuracy:.2f}")
 
-pickle.dump(model, open('models/model_trained.pkl', 'wb'))
+joblib.dump(model, 'models/model_trained.joblib')
+

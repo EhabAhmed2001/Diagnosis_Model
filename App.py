@@ -1,6 +1,6 @@
 import numpy as np
 from flask import Flask, request, jsonify
-import pickle
+import joblib
 import pandas as pd
 
 # Create flask app
@@ -8,7 +8,8 @@ app = Flask(__name__)
 
 # load model===========================================
 
-svc = pickle.load(open("models/model_trained.pkl", 'rb'))
+svc = joblib.load('models/model_trained.joblib')
+
 
 # load dataset===================================
 description = pd.read_csv("Dataset/description.csv")
@@ -127,7 +128,7 @@ def predict_disease():
 
 @app.route('/')
 def hello_index():
-    return "Welcome To Diagnosis Model"
+    return {'message': 'Welcome To Diagnosis Model'}
 
 if __name__ == "__main__":
     app.run(debug=True)
