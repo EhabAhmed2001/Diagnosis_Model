@@ -8,19 +8,19 @@ import pandas as pd
 app = Flask(__name__)
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=False )
 
 # load model===========================================
 
-svc = joblib.load('models/model_trained.joblib')
+svc = joblib.load('../models/model_trained.joblib')
 
 
 # load dataset===================================
-description = pd.read_csv("Dataset/description.csv")
-medications = pd.read_csv("Dataset/medications.csv")
-workout = pd.read_csv("Dataset/workout_df.csv")
-precautions = pd.read_csv("Dataset/precautions_df.csv")
-diets = pd.read_csv("Dataset/diets.csv")
+description = pd.read_csv("../Dataset/description.csv")
+medications = pd.read_csv("../Dataset/medications.csv")
+workout = pd.read_csv("../Dataset/workout_df.csv")
+precautions = pd.read_csv("../Dataset/precautions_df.csv")
+diets = pd.read_csv("../Dataset/diets.csv")
 
 # Helper Function
 def helper(dis):
