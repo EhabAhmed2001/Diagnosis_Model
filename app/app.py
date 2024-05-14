@@ -3,12 +3,8 @@ from flask import Flask, request, jsonify
 import joblib
 import pandas as pd
 
-
 # Create flask app
 app = Flask(__name__)
-
-if __name__ == "__main__":
-    app.run(debug=False )
 
 # load model===========================================
 
@@ -108,6 +104,7 @@ def get_prediction_value(patient_symptoms):
 @app.route('/predict', methods=['GET'])
 def predict_disease():
 
+
     symptoms = request.json.get('symptoms')
 
     splited_symptoms = [s.strip() for s in symptoms.split(',')]
@@ -129,7 +126,10 @@ def predict_disease():
     except Exception as e:
         return jsonify({'error': str(e)}), 400
 
-@app.route('/home')
+@app.route('/')
 def hello_index():
     return {'message': 'Welcome To Diagnosis Model'}
+
+if __name__ == "__main__":
+    app.run(debug=False)
 
