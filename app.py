@@ -3,20 +3,21 @@ from flask import Flask, request, jsonify
 import joblib
 import pandas as pd
 
+
 # Create flask app
 app = Flask(__name__)
 
 # load model===========================================
 
-svc = joblib.load('../models/model_trained.joblib')
+svc = joblib.load('models/model_trained.joblib')
 
 
 # load dataset===================================
-description = pd.read_csv("../Dataset/description.csv")
-medications = pd.read_csv("../Dataset/medications.csv")
-workout = pd.read_csv("../Dataset/workout_df.csv")
-precautions = pd.read_csv("../Dataset/precautions_df.csv")
-diets = pd.read_csv("../Dataset/diets.csv")
+description = pd.read_csv("Dataset/description.csv")
+medications = pd.read_csv("Dataset/medications.csv")
+workout = pd.read_csv("Dataset/workout_df.csv")
+precautions = pd.read_csv("Dataset/precautions_df.csv")
+diets = pd.read_csv("Dataset/diets.csv")
 
 # Helper Function
 def helper(dis):
@@ -101,7 +102,7 @@ def get_prediction_value(patient_symptoms):
 # creating routes========================================
 # Define a route for the home page
 
-@app.route('/predict', methods=['GET'])
+@app.route('/predict', methods=['POST'])
 def predict_disease():
 
 
